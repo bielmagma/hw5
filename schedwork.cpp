@@ -111,11 +111,9 @@ bool helper(
 
 bool check_ifValid(unsigned int i,map<Worker_T, int> track){
 	
-  map<Worker_T, int>::iterator iterator; 
-
-  for(iterator = track.begin(); iterator != track.end(); iterator++){
-    if((*iterator).first == i)  if((*iterator).second > 0) return true;
-  }
+	for(auto j : track){
+		if(j.first == i) if(j.second > 0) return true;
+	}	
 
   return false;
 }
